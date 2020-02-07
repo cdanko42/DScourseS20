@@ -1,0 +1,18 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc} 
+\title{PS4_Danko} 
+\author{christopher.p.danko-1 } 
+\date{February 2020} 
+\begin{document} 
+\maketitle 
+\section{Answers to 6} 4. df1 is a data.frame df is a 
+SparkDataFrame\\
+5. df is a SparkDataFrame, not a data.frame 
+\section{Answers to 7} I would be  interested in scraping some tweets to 
+create regression-trained bots that tweet sporadically. You could have 
+some fun with that.\\
+ The idea of scraping classic texts off Project 
+Gutenberg is appealing to me as well, for a similar reason. Create a 
+"monkeys banging on keyboards" effect where you train a model to produce 
+classic literature.
+\end{document}
