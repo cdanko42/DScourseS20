@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2016.2.5)  28 FEB 2020 13:49
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2016.2.5)  28 FEB 2020 13:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -365,33 +365,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--9
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 4--9
-
- []
-
 <PS6a_Danko.png, id=1, 268.00125pt x 288.3272pt>
 File: PS6a_Danko.png Graphic file (type png)
  <use PS6a_Danko.png>
-Package pdftex.def Info: PS6a_Danko.png used on input line 11.
+Package pdftex.def Info: PS6a_Danko.png used on input line 20.
 (pdftex.def)             Requested size: 113.81102pt x 122.44284pt.
 
 <PS6b_Danko.png, id=2, 268.00125pt x 288.3272pt>
 File: PS6b_Danko.png Graphic file (type png)
  <use PS6b_Danko.png>
-Package pdftex.def Info: PS6b_Danko.png used on input line 19.
+Package pdftex.def Info: PS6b_Danko.png used on input line 24.
 (pdftex.def)             Requested size: 113.81102pt x 122.44284pt.
 
 <PS6c_Danko.png, id=3, 590.205pt x 307.90031pt>
 File: PS6c_Danko.png Graphic file (type png)
  <use PS6c_Danko.png>
-Package pdftex.def Info: PS6c_Danko.png used on input line 28.
+Package pdftex.def Info: PS6c_Danko.png used on input line 30.
 (pdftex.def)             Requested size: 113.81102pt x 59.37082pt.
  [1
 
-{/usr/share/texlive/texmf/fonts/map/pdftex/updmap/pdftex.map} <./PS6a_Danko.png
->]
-[2 <./PS6b_Danko.png> <./PS6c_Danko.png>] (./PS6_Danko.aux) ) 
+{/usr/share/texlive/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2 <./PS6a_Danko
+.png> <./PS6b_Danko.png> <./PS6c_Danko.png>] (./PS6_Danko.aux) ) 
 Here is how much of TeX's memory you used:
  1703 strings out of 495063
  23224 string characters out of 3182202
@@ -399,13 +393,13 @@ Here is how much of TeX's memory you used:
  4880 multiletter control sequences out of 15000+200000
  7280 words of font info for 26 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 37i,6n,23p,315b,224s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr17.pfb>
-Output written on PS6_Danko.pdf (2 pages, 100579 bytes).
+ 37i,6n,23p,328b,224s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmr17.pfb>
+Output written on PS6_Danko.pdf (2 pages, 100471 bytes).
 PDF statistics:
  33 PDF objects out of 1000 (max. 8388607)
  18 compressed objects within 1 object stream
