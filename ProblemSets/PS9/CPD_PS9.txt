@@ -1,0 +1,19 @@
+\documentclass{article} \usepackage[utf8]{inputenc} \title{CPD_PS9} 
+\author{christopher.p.danko-1 } \date{March 2020} \begin{document} 
+\maketitle \section{5} The dimension is 404x450 \section{6} lambda = 
+.0223\\ In-sample RMSE= 0.1915950\\ Out-sample RMSE = .159 \section{7} 
+lambda = .11\\ In-sample RMSE= 0.1582139\\ Out-sample RMSE= 0.1469757 
+\section{8} alpha = .274\\ lambda = .0538\\ In-sample RMSE= .1859432\\ 
+Out-sample= .1531867\\ The result suggest that I should use 
+ridge-regression, as the alpha is closer to 0 than 1. \section{9} The 
+net model seems to be balanced pretty well between bias and variance. 
+The RMSE is between both ridge and lasso, so its bias is between the 
+two. The value of the tuning parameter also lies between both 
+approaches, so its variance is between the two as well. This is what 
+we're looking for when estimating y-hat, so it looks pretty good.\\ A 
+simple linear model would not work because there are simply too many 
+parameters, many of them mostly irrelevant. If we threw them all in the 
+same regression, we'd have an R-squared of 1. This, we need parameters 
+that trend many of them towards 0 so we only keep the relevant 
+parameters.
+\end{document}
