@@ -183,7 +183,7 @@ ds3 %>%
 #Calculate alpha and beta for prior
 lambda = (1-popratio)/popratio
 N = 400
-alpha = N/(1+ lambda)^2 -1
+alpha = (lambda*N)/(1+ lambda)^3 -1/(1+lambda)
 beta = lambda*alpha
 
 #Plot beta and save it as figure 3
@@ -213,6 +213,8 @@ ds3 <- as.data.frame(c(mean(posterior3$pi), sd(posterior3$pi), sum(posterior3$su
 ds3 <- as.data.frame(t(as.matrix(ds3)))
 colnames(ds3) <- c("Mean", "Standard Deviation", "Samples > Ratio" )
 
+library(tidyverse)
+library(gt)
 ds3 %>%
   gt() %>%
   tab_header(
@@ -222,8 +224,8 @@ ds3 %>%
 
 #Calculate alpha and beta for prior
 lambda = (1-popratio)/popratio
-N = 7590
-alpha2 = N/(1+ lambda)^2 -1
+N = 18400
+alpha2 = (lambda*N)/(1+ lambda)^3 -1/(1+lambda)
 beta2 = lambda*alpha2
 
 #Plot beta and save it as figure 4
@@ -239,6 +241,7 @@ posterior5 <- as.data.frame(posterior5)
 posterior5$sum <- posterior5$pi
 posterior5$sum[posterior5$sum >= popratio] <- 1
 posterior5$sum[posterior5$sum != 1] <- 0
+sum(posterior5$sum)
 
 #Create figure 5
 ggplot(posterior5, aes(x=pi))+
@@ -249,7 +252,6 @@ ggplot(posterior5, aes(x=pi))+
   ggsave("FinalProject/MWE/Graphics/Figure5.png")
 
 #Format and create table 5
-#Format and calculate table 4
 ds3 <- as.data.frame(c(mean(posterior5$pi), sd(posterior5$pi), sum(posterior5$sum)))
 ds3 <- as.data.frame(t(as.matrix(ds3)))
 colnames(ds3) <- c("Mean", "Standard Deviation", "Samples > Ratio" )
@@ -260,3 +262,41 @@ ds3 %>%
     title = "Summary of Posterior with Strong Priors Imposed"
   ) %>%
   gtsave("FinalProject/MWE/Graphics/Table5.png")
+
+#Use priors to inform analysis
+#calculate average difference
+avgdiff = (popratio2013-killratio2013+popratio2014-killratio2014+popratio2015-killratio2015+popratio2016-killratio2016+popratio2017-killratio2017)/5
+lambda = (1-(popratio2018-avgdiff))/(popratio2018-avgdiff)
+N = totcount2013+totcount2014+totcount2015+totcount2016+totcount2017
+alpha2 = (lambda*N)/(1+ lambda)^3 -1/(1+lambda)
+beta2 = lambda*alpha2
+
+png(file = "FinalProject/MWE/Graphics/Figure8.png")
+plot(p, dbeta(p, alpha2, beta2), main="Informed Priors for 2018",ylab="density", type ="l", col=4)
+lines(p, dbeta(p, alpha, beta), col=3)
+dev.off()
+
+
+posterior7 <- MCbinomialbeta(abckilled2018, totkilled2018, alpha=alpha2, beta= beta2, mc=10000 )
+posterior7 <- as.data.frame(posterior7)
+
+ggplot(posterior7, aes(x=pi))+
+  geom_posterior()+
+  xlim(.4,.6)+
+  labs(title= "2018 Posterior Probability with Informed Priors") +
+  geom_segment(aes(x = popratio2018, xend=popratio2018, y = .25, yend = 0), colour='#000000', size=1,arrow = arrow(length = unit(0.5, "cm")))+
+  ggsave("FinalProject/MWE/Graphics/Figure9.png")
+posterior7$sum <- posterior7$pi
+posterior7$sum[posterior7$sum >= popratio2014] <- 1
+posterior7$sum[posterior7$sum != 1] <- 0
+sum(posterior7$sum)
+
+ds3 <- as.data.frame(c(mean(posterior7$pi), sd(posterior7$pi), sum(posterior7$sum)))
+ds3 <- as.data.frame(t(as.matrix(ds3)))
+colnames(ds3) <- c("Mean", "Standard Deviation", "Samples > Ratio" )
+ds3 %>%
+  gt() %>%
+  tab_header(
+    title = "Summary of 2018 Posterior with Informational Priors Imposed"
+  ) %>%
+  gtsave("FinalProject/MWE/Graphics/Table7.png")
